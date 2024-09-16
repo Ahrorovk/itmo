@@ -61,11 +61,15 @@ public class Main {
     public static void main(String[] args) {
         int[] w = setEvens();
 
+        System.out.print("First array: \n");
+
         for (int val : w) {
             System.out.print(val + " ");
         }
 
         System.out.println();
+
+        System.out.print("Second array: \n");
 
         double[] x = setRandom();
 
@@ -74,6 +78,8 @@ public class Main {
         }
 
         System.out.println();
+
+        System.out.print("Matrix: \n");
 
         double[][] q = changeMatrix(w, x);
 
