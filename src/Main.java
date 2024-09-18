@@ -7,14 +7,12 @@ public class Main {
     private static final int ARR_X = 14;
 
     private static double calculate(int w, double x) {
-        switch (w) {
-            case 16:
-                return asin(pow(sin(x), 2.0));
-            case 2, 4, 14, 20, 22:
-                return pow((3 / 4) / (1 - sin(pow(x, 1.0 / 3.0))), 2.0);
-            default:
-                return pow(pow(0.25 / (pow(3 / 4 - pow(x, 1.0 / 3.0), 2.0)), sin(pow(x / (0.25 + x), 2.0))), (1.0 / 3.0));
-        }
+        return switch (w) {
+            case 16 -> asin(pow(sin(x), 2.0));
+            case 2, 4, 14, 20, 22 -> pow((3 / 4) / (1 - sin(pow(x, 1.0 / 3.0))), 2.0);
+            default ->
+                    pow(pow(0.25 / (pow(3 / 4 - pow(x, 1.0 / 3.0), 2.0)), sin(pow(x / (0.25 + x), 2.0))), (1.0 / 3.0));
+        };
     }
 
     private static void printAnswer(double[][] q) {
